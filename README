@@ -1,2 +1,32 @@
-SevenZipAdvisor
+:: SevenZipAdvisor :: is PHP plugin for handling 7zip files
+
+I  How to use this for unzip
+    // step 1. include class path
+    require_once "Core/SevenZipAdvisor.php";
+   
+    // step 2. add options 
+    $options =array(
+        "filePath" => dirname( __FILE__ )."/test/",
+        "file_from" => 'seven-zip-with-password.7z', 
+        "password" => "password",  // this optional 
+    );
+    // step 3. pass parameters ; Shows files the file activity:
+    print \Core\SevenZipAdvisor::get() 
+            -> init_options($options) ->decompress() . " file(s) in archive\n";
+
+II  How to use this for ZIP
+    // step 1. include class path
+    require_once "Core/SevenZipAdvisor.php";
+   
+    // step 2. add options 
+    $options =array(
+        "filePath" => dirname( __FILE__ )."/test/",
+        "file_to" => "file_to.7z",  /* this option is must if you compress a folder 
+        "archivePath" => dirname( __FILE__ )."/test/seven-zip-with-password-pass",  // this option is must if you compress a folder
+        "action" => "compress",  // this option is must if you compress a folder 
+        "password" => "password",  // this optional 
+    );
+    // step 3. pass parameters ; Shows files the file activity:
+    print  \Core\SevenZipAdvisor::get() 
+                -> init_options($options) ->compress() . " file(s) in archive\n";
 
