@@ -1,0 +1,7 @@
+To install use the below command::
+
+sudo apt-get install p7zip-full
+
+
+reference:
+https://packages.debian.org/sid/p7zip-full
